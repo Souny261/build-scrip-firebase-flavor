@@ -1,27 +1,30 @@
 echo "Current Config =======> ${CONFIGURATION}"
 
-if [ "${CONFIGURATION}" == "Debug" ] || [ "${CONFIGURATION}" == "Release" ] || [ "${CONFIGURATION}" == "Debug-dev" ] || [ "${CONFIGURATION}" == "Release-dev"  ]; then
 
-cp -r "${PROJECT_DIR}/dev/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
+# Name and path of the resource we're copying
+GOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist
+GOOGLESERVICE_INFO_FILE_DEV=${PROJECT_DIR}/flavors/dev/${GOOGLESERVICE_INFO_PLIST}
+GOOGLESERVICE_INFO_FILE_PROD=${PROJECT_DIR}/flavors/prod/${GOOGLESERVICE_INFO_PLIST}
 
-echo "Development plist copied"
-
-elif [ "${CONFIGURATION}" == "Debug-sit" ] || [ "${CONFIGURATION}" == "Release-sit" ]; then
-
-cp -r "${PROJECT_DIR}/sit/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
-
-echo "SIT plist copied"
-
-elif [ "${CONFIGURATION}" == "Debug-uat" ] || [ "${CONFIGURATION}" == "Release-uat" ]; then
-
-cp -r "${PROJECT_DIR}/uat/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
-
-echo "UAT plist copied"
-
-elif [ "${CONFIGURATION}" == "Debug-prod" ] || [ "${CONFIGURATION}" == "Release-prod" ]; then
-
-cp -r "${PROJECT_DIR}/prod/GoogleService-Info.plist" "${PROJECT_DIR}/Runner/GoogleService-Info.plist"
-
-echo "Production plist copied"
-
+echo "Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_FILE}"
+if [ ! -f $GOOGLESERVICE_INFO_FILE_DEV ] || [ ! -f $GOOGLESERVICE_INFO_FILE_PROD ]
+then
+echo "No GoogleService-Info.plist found. Please ensure it's in the proper directory."
+exit 1
 fi
+PLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app
+
+if [ "${CONFIGURATION}" == "Debug" ] || [ "${CONFIGURATION}" == "DevDebug" ] || [ "${CONFIGURATION}" == "DevRelease"  ]
+then
+echo "DEV: Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}"
+# Copy over the prod GoogleService-Info.plist for Release builds
+cp "${GOOGLESERVICE_INFO_FILE_DEV}" "${PLIST_DESTINATION}"
+elif [ "${CONFIGURATION}" == "ProdDebug" ] || [ "${CONFIGURATION}" == "ProdRelease" ]
+then
+echo "PROD: Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}"
+# Copy over the prod GoogleService-Info.plist for Release builds
+cp "${GOOGLESERVICE_INFO_FILE_PROD}" "${PLIST_DESTINATION}"
+fi
+
+
+
