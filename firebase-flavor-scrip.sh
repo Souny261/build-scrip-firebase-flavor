@@ -1,9 +1,12 @@
+# build-scrip-firebase-flavor
 echo "Current Config =======> ${CONFIGURATION}"
 
 
 # Name and path of the resource we're copying
 GOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist
 GOOGLESERVICE_INFO_FILE_DEV=${PROJECT_DIR}/flavors/dev/${GOOGLESERVICE_INFO_PLIST}
+GOOGLESERVICE_INFO_FILE_UAT=${PROJECT_DIR}/flavors/uat/${GOOGLESERVICE_INFO_PLIST}
+GOOGLESERVICE_INFO_FILE_STG=${PROJECT_DIR}/flavors/stg/${GOOGLESERVICE_INFO_PLIST}
 GOOGLESERVICE_INFO_FILE_PROD=${PROJECT_DIR}/flavors/prod/${GOOGLESERVICE_INFO_PLIST}
 
 echo "Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_FILE}"
@@ -17,12 +20,25 @@ PLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app
 if [ "${CONFIGURATION}" == "Debug" ] || [ "${CONFIGURATION}" == "DevDebug" ] || [ "${CONFIGURATION}" == "DevRelease"  ]
 then
 echo "DEV: Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}"
-# Copy over the prod GoogleService-Info.plist for Release builds
+# Copy DEV
 cp "${GOOGLESERVICE_INFO_FILE_DEV}" "${PLIST_DESTINATION}"
+
+elif [ "${CONFIGURATION}" == "UatDebug" ] || [ "${CONFIGURATION}" == "UatRelease" ]
+then
+echo "UAT: Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}"
+# Copy UAT
+cp "${GOOGLESERVICE_INFO_FILE_UAT}" "${PLIST_DESTINATION}"
+
+elif [ "${CONFIGURATION}" == "StgDebug" ] || [ "${CONFIGURATION}" == "StgRelease" ]
+then
+echo "UAT: Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}"
+# Copy STG
+cp "${GOOGLESERVICE_INFO_FILE_STG}" "${PLIST_DESTINATION}"
+
 elif [ "${CONFIGURATION}" == "ProdDebug" ] || [ "${CONFIGURATION}" == "ProdRelease" ]
 then
 echo "PROD: Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}"
-# Copy over the prod GoogleService-Info.plist for Release builds
+# Copy PROD
 cp "${GOOGLESERVICE_INFO_FILE_PROD}" "${PLIST_DESTINATION}"
 fi
 

@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "996600308944",
+    "firebase_url": "https://kokkokservices-default-rtdb.firebaseio.com",
+    "project_id": "kokkokservices",
+    "storage_bucket": "kokkokservices.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996600308944:android:14aeb35bea9270b9da2ad5",
+        "android_client_info": {
+          "package_name": "com.kokkok.driver.kokkokdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996600308944-1mrf0ilkgjvbhf2hd78n9t2lbcm4m36p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7DvuC2h2Uyp47wX9xyDPx9QLdMZO5240"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996600308944-1mrf0ilkgjvbhf2hd78n9t2lbcm4m36p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "996600308944-88ip3ltgocfdiakvldkn3907qh80vqv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kokkoksole.kokkokmovedriver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996600308944:android:43ed57bf95d01613da2ad5",
+        "android_client_info": {
+          "package_name": "com.kokkoksole.kkmove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996600308944-05kjv0ujtuevdcvf1v5ic0cipaepnsdv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kokkoksole.kkmove",
+            "certificate_hash": "b5a99a17acbaacf30e2cbb52bec5ebbadbedfe8e"
+          }
+        },
+        {
+          "client_id": "996600308944-ltk9eri69gf659oc6ooddeg8brlojlm0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kokkoksole.kkmove",
+            "certificate_hash": "ee40e154a499ed736ba9ad53a1f572bb27a8f3d5"
+          }
+        },
+        {
+          "client_id": "996600308944-nrf4c3rctd9a42u22h740vn6s8i11vvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kokkoksole.kkmove",
+            "certificate_hash": "cef9fcf97e9976cc60cf58f5711b6567d731211c"
+          }
+        },
+        {
+          "client_id": "996600308944-1mrf0ilkgjvbhf2hd78n9t2lbcm4m36p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7DvuC2h2Uyp47wX9xyDPx9QLdMZO5240"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996600308944-1mrf0ilkgjvbhf2hd78n9t2lbcm4m36p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "996600308944-88ip3ltgocfdiakvldkn3907qh80vqv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kokkoksole.kokkokmovedriver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996600308944:android:47efca88755d98a4da2ad5",
+        "android_client_info": {
+          "package_name": "com.kokkoksole.kokkokmovedriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996600308944-1mrf0ilkgjvbhf2hd78n9t2lbcm4m36p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7DvuC2h2Uyp47wX9xyDPx9QLdMZO5240"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996600308944-1mrf0ilkgjvbhf2hd78n9t2lbcm4m36p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "996600308944-88ip3ltgocfdiakvldkn3907qh80vqv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kokkoksole.kokkokmovedriver"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
